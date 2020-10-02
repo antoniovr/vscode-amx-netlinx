@@ -1,6 +1,6 @@
 {
     "Data_Event Codeblock":{
-        "prefix": "DATA_EVENT",
+        "prefix": "data_event",
         "body": [
             "DATA_EVENT[${1:device}]",
             "{",
@@ -12,7 +12,8 @@
             "\tCOMMAND: { }",
             "\tSTRING:",
             "\t{",
-            "\t\t",
+            "\t\tstack_var char sAux[64]",
+            "\t\tsAux = data.text",
             "\t}",
             "}"
         ],
@@ -38,9 +39,9 @@
     "Level_Event Codeblock":{
         "prefix": "level_event",
         "body": [
-            "LEVEL_EVENT[${1:device},${2:level}]",
+            "level_event[${1:device},${2:level}]",
             "{",
-            "\tSTACK_VAR INTEGER nLevel",
+            "\tstack_var integer nLevel",
             "\tnLevel = LEVEL.VALUE",
             "\t",
             "\t$0",
@@ -190,12 +191,17 @@
     "Define_Function Codeblock":{
         "prefix": "define_function",
         "body": [
-            "DEFINE_FUNCTION ${1:return_type} ${2:function_name} (${3:parameters})",
+            "define_function ${1:return_type} ${2:function_name} (${3:parameters})",
             "{",
             "\t$0",
             "}"
         ],
         "description": "DEFINE_FUNCTION code block"
+    },
+    "Get_Buffer_String Function":{
+        "prefix":"get_buffer_string",
+        "body":"get_buffer_string($(1:string),$(2:length)",
+        "description": "get_buffer_string() function call"
     },
     "Get_Last Function":{
         "prefix": "get_last",
@@ -249,12 +255,12 @@
     },
     "Integer Storage Type":{
         "prefix": "integer",
-        "body": "INTEGER $0",
+        "body": "integer $0",
         "description": "Integer variable type"
     },
     "SInteger Storage Type":{
         "prefix": "sinteger",
-        "body": "SINTEGER $0",
+        "body": "sinteger $0",
         "description": "Signed Integer variable type"
     },
     "Char Storage Type":{
@@ -284,83 +290,83 @@
     },
     "Local_Var Declaration":{
         "prefix": "local_var",
-        "body": "LOCAL_VAR $0",
+        "body": "local_var $0",
         "description": "Local_Var context declaration"
     },
     "Local_Var Integer Declaration":{
         "prefix": "local_var integer",
-        "body": "LOCAL_VAR INTEGER $0",
+        "body": "local_var integer $0",
         "description": "Local_Var Integer variable declaration"
     },
     "Local_Var SInteger Declaration":{
         "prefix": "local_var sinteger",
-        "body": "LOCAL_VAR SINTEGER $0",
+        "body": "local_var sinteger $0",
         "description": "Local_Var Signed Integer variable declaration"
     },
     "Local_Var Char Declaration":{
         "prefix": "local_var char",
-        "body": "LOCAL_VAR CHAR $0",
+        "body": "local_var CHAR $0",
         "description": "Local_Var Char variable declaration"
     },
     "Local_Var Long Declaration":{
         "prefix": "local_var long",
-        "body": "LOCAL_VAR LONG $0",
+        "body": "local_var LONG $0",
         "description": "Local_Var Long variable declaration"
     },
     "Local_Var SLong Declaration":{
         "prefix": "local_var slong",
-        "body": "LOCAL_VAR SLONG $0",
+        "body": "local_var SLONG $0",
         "description": "Local_Var SLong variable declaration"
     },
     "Local_Var Float Declaration":{
         "prefix": "local_var float",
-        "body": "LOCAL_VAR FLOAT $0",
+        "body": "local_var FLOAT $0",
         "description": "Local_Var Float variable declaration"
     },
     "Local_Var Double Declaration":{
         "prefix": "local_var double",
-        "body": "LOCAL_VAR DOUBLE $0",
+    "body": "local_var DOUBLE $0",
         "description": "Local_Var Double variable declaration"
     },
-    "Stack_Var Declaration":{
+    "stack_var Declaration":{
         "prefix": "stack_var",
-        "body": "STACK_VAR $0",
-        "description": "Stack_Var context declaration"
+        "body": "stack_var $0",
+        "description": "stack_var context declaration"
     },
-    "Stack_Var Char Declaration":{
+    "stack_var Char Declaration":{
         "prefix": "stack_var char",
-        "body": "STACK_VAR CHAR $0",
-        "description": "Stack_Var Char context declaration"
+        "body": "stack_var CHAR $0",
+        "description": "stack_var Char context declaration"
     },
-    "Stack_Var Integer Declaration":{
+    "stack_var Integer Declaration":{
         "prefix": "stack_var integer",
-        "body": "STACK_VAR INTEGER $0",
-        "description": "Stack_Var Integer context declaration"
+        "body": "stack_var integer $0",
+        "description": "stack_var Integer context declaration"
     },
-    "Stack_Var SInteger Declaration":{
+    "stack_var SInteger Declaration":{
         "prefix": "stack_var sinteger",
-        "body": "STACK_VAR SINTEGER $0",
-        "description": "Stack_Var Signed Integer context declaration"
+        "body": "stack_var sinteger $0",
+        "description": "stack_var Signed Integer context declaration"
     },
-    "Stack_Var Long Declaration":{
+    "stack_var Long Declaration":{
         "prefix": "stack_var long",
-        "body": "STACK_VAR LONG $0",
-        "description": "Stack_Var Long context declaration"
+        "body": "stack_var LONG $0",
+        "description": "stack_var Long context declaration"
     },
-    "Stack_Var SLong Declaration":{
+    "stack_var SLong Declaration":{
         "prefix": "stack_var slong",
-        "body": "STACK_VAR SLONG $0",
-        "description": "Stack_Var SLong context declaration"
+        "body": "stack_var SLONG $0",
+        "description": "stack_var SLong context declaration"
     },
-    "Stack_Var Float Declaration":{
+    "stack_var Float Declaration":{
         "prefix": "stack_var float",
-        "body": "STACK_VAR FLOAT $0",
-        "description": "Stack_Var Float context declaration"
+        "body": "stack_var FLOAT $0",
+        "description": "stack_var Float context declaration"
     },
-    "Stack_Var Double Declaration":{
+    "stack_var Double Declaration":{
         "prefix": "stack_var double",
-        "body": "STACK_VAR DOUBLE $0",
-        "description": "Stack_Var Double context declaration"
+        "body": "stack_var DOUBLE $0",
+        "description": "stack_var Double context declaration"
     },
     "Send_Command Function":{
         "prefix": "send_command",
@@ -431,7 +437,7 @@
             "STRUCTURE URL_STRUCT",
             "{",
             "\tCHAR     Flags;           // Connection Type (normally 1)",
-            "\tINTEGER  Port;            // TCP port (normally 1319)",
+            "\tinteger  Port;            // TCP port (normally 1319)",
             "\tCHAR     URL[128];        // string: URL or IP address",
             "\tCHAR     User[20];        // optional account info for ICSPS",
             "\tCHAR     Password[20];    // optional account info for ICSPS",
@@ -447,7 +453,7 @@
             "STRUCTURE URL_STRUCT",
             "{",
             "\tCHAR     Flags;           // Connection Type (normally 1)",
-            "\tINTEGER  Port;            // TCP port (normally 1319)",
+            "\tinteger  Port;            // TCP port (normally 1319)",
             "\tCHAR     URL[128];        // string: URL or IP address",
             "\tCHAR     User[20];        // optional account info for ICSPS",
             "\tCHAR     Password[20];    // optional account info for ICSPS",
@@ -463,7 +469,7 @@
             "STRUCTURE URL_STRUCT",
             "{",
             "\tCHAR     Flags;           // Connection Type (normally 1)",
-            "\tINTEGER  Port;            // TCP port (normally 1319)",
+            "\tinteger  Port;            // TCP port (normally 1319)",
             "\tCHAR     URL[128];        // string: URL or IP address",
             "\tCHAR     User[20];        // optional account info for ICSPS",
             "\tCHAR     Password[20];    // optional account info for ICSPS",
@@ -478,7 +484,7 @@
     },
     "Ip_Client_Close function": {
         "prefix": "ip_client_close",
-        "body": "IP_CLIENT_CLOSE(${1:localport})\n$0",
+        "body": "ip_client_close(${1:localport})\n$0",
         "description": "Ip_Client_Close function definition"
     },
     "Ssh_Client_Open function": {
