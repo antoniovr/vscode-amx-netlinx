@@ -1,7 +1,10 @@
 # Change Log
 
-## 0.7.0
-- Modifications to my taste
+## 0.7.0 (FORK)
+- Switched to lowercase in almost every piece of code and remove some spaces (this is a very personal change)
+- Added get_buffer_string and get_buffer_char functions
+- Added timeline_create function snnipet
+- Added PARSE code block snnipet with SNAPI functions for messages with this format: HEADER-Param,Value
 
 ## 0.6.1
 - Changed AXI file to Netlinx Source
