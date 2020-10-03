@@ -81,3 +81,4 @@ This extension contributes the following settings:
 + Added get_buffer_string and get_buffer_char functions
 + Added timeline_create function snnipet
 + Added PARSE code block snnipet with SNAPI functions for messages with this format: HEADER-Param,Value
++ Added WAIT code block (0.7.1)

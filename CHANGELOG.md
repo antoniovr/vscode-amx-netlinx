@@ -1,5 +1,8 @@
 # Change Log
 
+## 0.7.1
+- Added WAIT code block
+
 ## 0.7.0 (FORK)
 - Switched to lowercase in almost every piece of code and remove some spaces (this is a very personal change)
 - Added get_buffer_string and get_buffer_char functions

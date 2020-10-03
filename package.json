@@ -2,12 +2,12 @@
 	"name": "amx-netlinx",
 	"displayName": "AMX Netlinx",
 	"description": "Extension for AMX Netlinx. Includes syntax highlighting and compiling.",
-	"version": "0.7.0",
+	"version": "0.7.1",
 	"publisher": "antoniovr",
 	"icon": "netlinx.png",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/sentry07/vscode-amx-netlinx.git"
+		"url": "https://github.com/antoniovr/vscode-amx-netlinx.git"
 	},
 	"license": "GPL-3.0",
 	"engines": {

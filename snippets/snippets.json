@@ -211,7 +211,17 @@
             "}"
         ],
         "description": "ACTIVE conditional block"
-    },
+	},
+	"Wait Codeblock":{
+		"prefix": "wait",
+		"body":[
+			"wait ${1:TIME} ${2:OPTIONAL_NAME}",
+			"{",
+			"\t$0",
+			"}"
+		],
+		"description": "WAIT code block"
+	},
     "Define_Function Codeblock":{
         "prefix": "define_function",
         "body": [
