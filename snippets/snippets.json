@@ -234,65 +234,71 @@
             "}"
         ],
         "description": "DEFINE_FUNCTION with RETURN code block"
-    },	
+	},	
+	"Timeline_Create Function":
+	{
+		"prefix":"timeline_create",
+		"body": "timeline_create(${1:_TLID},${2:lTimes},max_length_array(${2:lTimes}),${3:TIMELINE_RELATIVE|TIMELINE_ABSOLUTE},${4:TIMELINE_REPEAT|TIMELINE_ONCE})",
+		"description": "timeline_create() function call"
+	}, 
     "Get_Buffer_String Function":{
         "prefix":"get_buffer_string",
-        "body":"get_buffer_string(${1:string},${2:length}",
+        "body":"get_buffer_string(${1:string},${2:length})",
         "description": "get_buffer_string() function call"
 	},
     "Get_Buffer_Char Function":{
-        "prefix":"get_buffer_string",
-        "body":"get_buffer_string(${1:string},${2:length}",
+        "prefix":"get_buffer_char",
+        "body":"get_buffer_char(${1:string})",
         "description": "get_buffer_string() function call"
 	},	
     "Get_Last Function":{
         "prefix": "get_last",
-        "body": "GET_LAST(${1:array})$0",
+        "body": "get_last(${1:array})$0",
         "description": "Get_Last() function call"
     },
     "Length_Array Function":{
         "prefix": "length_array",
-        "body": "LENGTH_ARRAY(${1:var})$0",
+        "body": "length_array(${1:var})$0",
         "description": "Length_Array() function call"
     },
     "Max_Length_Array Function":{
         "prefix": "max_length_array",
-        "body": "MAX_LENGTH_ARRAY(${1:var})$0",
+        "body": "max_length_array(${1:var})$0",
         "description": "Max_Length_Array() function call"
     },
     "Set_Length_Array Function":{
         "prefix": "set_length_array",
-        "body": "SET_LENGTH_ARRAY(${1:var},${2:length})$0",
+        "body": "set_length_array(${1:var},${2:length})$0",
         "description": "Set_Length_Array() function call"
     },
     "Length_String Function":{
         "prefix": "length_string",
-        "body": "LENGTH_STRING(${1:var})$0",
+        "body": "length_string(${1:var})$0",
         "description": "Length_String() function call"
     },
     "Find_String Function":{
         "prefix": "find_string",
-        "body": "FIND_STRING(${1:haystack},${2:needle},${3:startpos})$0",
+        "body": "find_string(${1:where},${2:what},${3:startpos})$0",
         "description": "Find_String() function call"
     },
     "Remove_String Function":{
         "prefix": "remove_string",
-        "body": "REMOVE_STRING(${1:haystack},${2:needle},${3:startpos})$0",
+        "body": "remove_string(${1:where},${2:what},${3:startpos})$0",
         "description": "Length_Array() function call"
     },
     "Left_String Function":{
         "prefix": "left_string",
-        "body": "LEFT_STRING(${1:var},${2:length})$0",
+        "body": "left_string(${1:var},${2:length})$0",
         "description": "Left_String() function call"
     },
     "Right_String Function":{
         "prefix": "right_string",
-        "body": "RIGHT_STRING(${1:var},${2:length})$0",
+        "body": "right_string(${1:var},${2:length})$0",
         "description": "Right_String() function call"
     },
     "Mid_String Function":{
         "prefix": "mid_string",
-        "body": "MID_STRING(${1:var},${2:startpos},${3:endpos})$0",
+        "body": "mid_string(${1:var},${2:startpos},${3:endpos})$0",
         "description": "Mid_String() function call"
     },
     "Integer Storage Type":{
@@ -307,27 +313,27 @@
     },
     "Char Storage Type":{
         "prefix": "char",
-        "body": "CHAR $0",
+        "body": "char $0",
         "description": "Char variable type"
     },
     "Long Storage Type":{
         "prefix": "long",
-        "body": "LONG $0",
+        "body": "long $0",
         "description": "Long variable type"
     },
     "SLong Storage Type":{
         "prefix": "slong",
-        "body": "SLONG $0",
+        "body": "slong $0",
         "description": "SLong variable type"
     },
     "Float Storage Type":{
         "prefix": "float",
-        "body": "FLOAT $0",
+        "body": "float $0",
         "description": "Float variable type"
     },
     "Double Storage Type":{
         "prefix": "double",
-        "body": "DOUBLE $0",
+        "body": "double $0",
         "description": "Double variable type"
     },
     "Local_Var Declaration":{
@@ -347,7 +353,7 @@
     },
     "Local_Var Char Declaration":{
         "prefix": "local_var char",
-        "body": "local_var CHAR $0",
+        "body": "local_var char $0",
         "description": "Local_Var Char variable declaration"
     },
     "Local_Var Long Declaration":{
@@ -377,7 +383,7 @@
     },
     "stack_var Char Declaration":{
         "prefix": "stack_var char",
-        "body": "stack_var CHAR $0",
+        "body": "stack_var char $0",
         "description": "stack_var Char context declaration"
     },
     "stack_var Integer Declaration":{
@@ -412,16 +418,16 @@
     },
     "Send_Command Function":{
         "prefix": "send_command",
-        "body": "send_command ${1:device},""${2:command}""",
+        "body": "send_command ${1:device},${2:command}",
         "description": "Send_Command function declaration"
     },
     "Send_String Function":{
         "prefix": "send_string",
-        "body": "SEND_STRING $0",
+        "body": "send_string ${1:device},${2:string}",
         "description": "Send_String function declaration"
     },
     "Comment header":{
-        "prefix": "__com",
+        "prefix": "_com",
         "body": [
             "// ---------------------------------------------------------------------------------------------------------------------",
             "// ${1:Comment}",
@@ -429,99 +435,116 @@
             "$0"
         ],
         "description": "Comment header block"
-    },
+	},
+    "Comment block":{
+        "prefix": "_com_block",
+        "body": [
+            "/*",
+            "${1:Comment}",
+            "*/"
+        ],
+        "description": "Comment header block"
+    },	
     "Upper_String Function":{
         "prefix": "upper_string",
-        "body": "UPPER_STRING(${1:var})$0",
+		"body": 
+		[
+			"upper_string(${1:var})",
+			"$0"
+		],
         "description": "Upper_String() function call"
     },
     "Lower_String Function":{
         "prefix": "lower_string",
-        "body": "LOWER_STRING(${1:var})$0",
+		"body": 
+		[
+			"lower_string(${1:var})",
+			"$0"
+		],
         "description": "Lower_String() function call"
     },
     "Do_Push Function":{
         "prefix": "do_push",
-        "body": "DO_PUSH(${1:dev},${2:channel})\n$0",
+        "body": "do_push(${1:dev},${2:channel})\n$0",
         "description": "Do_Push function declaration"
     },
     "Do_Push_Timed Function":{
         "prefix": "do_push_timed",
-        "body": "DO_PUSH_TIMED(${1:dev},${2:channel})\n$0",
+        "body": "do_push_timed(${1:dev},${2:channel})\n$0",
         "description": "Do_Push_Timed function declaration"
     },
     "Do_Release Function":{
         "prefix": "do_release",
-        "body": "DO_RELEASE(${1:dev},${2:channel})\n$0",
+        "body": "do_release(${1:dev},${2:channel})\n$0",
         "description": "Do_Release function declaration"
     },
     "To Function":{
         "prefix": "to",
-        "body": "TO[${1:dev},${2:channel}]\n$0",
+        "body": "to[${1:dev},${2:channel}]\n$0",
         "description": "To function declaration"
     },
     "Pulse Function":{
         "prefix": "pulse",
-        "body": "PULSE[${1:dev},${2:channel}]\n$0",
+        "body": "pulse[${1:dev},${2:channel}]\n$0",
         "description": "Pulse function declaration"
     },
     "Set_Pulse_Time Function":{
         "prefix": "set_pulse_time",
-        "body": "SET_PULSE_TIME(${1:time})\n$0",
+        "body": "set_pulse_time(${1:time(tenth-of-seconds)})\n$0",
         "description": "Set_Pulse_Time function declaration"
     },
     "Add_Url_Entry Function":{
         "prefix": "add_url_entry",
-        "body": "ADD_URL_ENTRY(${1:master_dev},${2:url_struct})\n$0",
+        "body": "add_url_entry(${1:master_dev},${2:url_struct})\n$0",
         "description": [
             "Add_Url_Entry function declaration. Requires a D:P:S for the master_dev.\n",
             "The URL_STRUCT is predefined as follows:",
             "STRUCTURE URL_STRUCT",
             "{",
-            "\tCHAR     Flags;           // Connection Type (normally 1)",
+            "\tchar     Flags;           // Connection Type (normally 1)",
             "\tinteger  Port;            // TCP port (normally 1319)",
-            "\tCHAR     URL[128];        // string: URL or IP address",
-            "\tCHAR     User[20];        // optional account info for ICSPS",
-            "\tCHAR     Password[20];    // optional account info for ICSPS",
+            "\tchar     URL[128];        // string: URL or IP address",
+            "\tchar     User[20];        // optional account info for ICSPS",
+            "\tchar     Password[20];    // optional account info for ICSPS",
             "}"
         ]
     },
     "Delete_Url_Entry Function":{
         "prefix": "delete_url_entry",
-        "body": "DELETE_URL_ENTRY(${1:master_dev},${2:url_struct})\n$0",
+        "body": "delete_url_entry(${1:master_dev},${2:url_struct})\n$0",
         "description": [
             "Delete_Url_Entry function declaration. Requires a D:P:S for the master_dev.\n",
             "The URL_STRUCT is predefined as follows:",
             "STRUCTURE URL_STRUCT",
             "{",
-            "\tCHAR     Flags;           // Connection Type (normally 1)",
+            "\tchar     Flags;           // Connection Type (normally 1)",
             "\tinteger  Port;            // TCP port (normally 1319)",
-            "\tCHAR     URL[128];        // string: URL or IP address",
-            "\tCHAR     User[20];        // optional account info for ICSPS",
-            "\tCHAR     Password[20];    // optional account info for ICSPS",
+            "\tchar     URL[128];        // string: URL or IP address",
+            "\tchar     User[20];        // optional account info for ICSPS",
+            "\tchar     Password[20];    // optional account info for ICSPS",
             "}"
         ]
     },
     "Get_Url_List Function":{
         "prefix": "get_url_list",
-        "body": "GET_URL_LIST(${1:master_dev},${2:url_struct_array},${3|0,1,2|})\n$0",
+        "body": "get_url_list(${1:master_dev},${2:url_struct_array},${3|0,1,2|})\n$0",
         "description": [
             "Get_Url_List function declaration. Requires a D:P:S for the master_dev.\n",
             "The URL_STRUCT is predefined as follows:",
             "STRUCTURE URL_STRUCT",
             "{",
-            "\tCHAR     Flags;           // Connection Type (normally 1)",
+            "\tchar     Flags;           // Connection Type (normally 1)",
             "\tinteger  Port;            // TCP port (normally 1319)",
-            "\tCHAR     URL[128];        // string: URL or IP address",
-            "\tCHAR     User[20];        // optional account info for ICSPS",
-            "\tCHAR     Password[20];    // optional account info for ICSPS",
+            "\tchar     URL[128];        // string: URL or IP address",
+            "\tchar     User[20];        // optional account info for ICSPS",
+            "\tchar     Password[20];    // optional account info for ICSPS",
             "}",
             "The third parameter is the type of URL: 0 = All, 1 = IDE Programmed, 2 = NetLinx Programmed"
         ]
     },
     "Ip_Client_Open function": {
         "prefix": "ip_client_open",
-        "body": "IP_CLIENT_OPEN(${1:localport},'${2:serveraddress}',${3:serverport},${4|IP_TCP,IP_UDP,IP_UDP_2WAY|})\n$0",
+        "body": "ip_client_open(${1:localport},'${2:serveraddress}',${3:serverport},${4|IP_TCP,IP_UDP,IP_UDP_2WAY|})\n$0",
         "description": "Ip_Client_Open function definition"
     },
     "Ip_Client_Close function": {
@@ -531,22 +554,22 @@
     },
     "Ssh_Client_Open function": {
         "prefix": "ssh_client_open",
-        "body": "SSH_CLIENT_OPEN(${1:localport},'${2:serveraddress}',${3:serverport},'${4:username}','${5:password}','/certs/id_rsa','${6:keypass}')\n$0",
+        "body": "ssh_client_open(${1:localport},'${2:serveraddress}',${3:serverport},'${4:username}','${5:password}','/certs/id_rsa','${6:keypass}')\n$0",
         "description": "Ssh_Client_Open function definition"
     },
     "Ssh_Client_Close function": {
         "prefix": "ssh_client_close",
-        "body": "SSH_CLIENT_CLOSE(${1:localport})\n$0",
+        "body": "ssh_client_close(${1:localport})\n$0",
         "description": "Ssh_Client_Close function definition"
     },
     "Tls_Client_Open function": {
         "prefix": "tls_client_open",
-        "body": "TLS_CLIENT_OPEN(${1:localport},'${2:serveraddress}',${3:serverport},0)\n$0",
+        "body": "tls_client_open(${1:localport},'${2:serveraddress}',${3:serverport},0)\n$0",
         "description": "Tls_Client_Open function definition"
     },
     "Tls_Client_Close function": {
         "prefix": "tls_client_close",
-        "body": "TLS_CLIENT_CLOSE(${1:localport})\n$0",
+        "body": "tls_client_close(${1:localport})\n$0",
         "description": "Tls_Client_Close function definition"
     }
 
