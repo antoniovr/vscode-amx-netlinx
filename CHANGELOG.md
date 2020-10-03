@@ -1,5 +1,8 @@
 # Change Log
 
+## 0.7.0
+- Modifications to my taste
+
 ## 0.6.1
 - Changed AXI file to Netlinx Source
 - Changed aliases of languages to AMX Netlinx Source and AMX Netlinx Library

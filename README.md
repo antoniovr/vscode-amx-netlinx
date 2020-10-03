@@ -1,7 +1,25 @@
-This is a language package for programming AMX Netlinx control systems. It has syntax highlighting, a code beautifier, snippets for a lot of Netlinx
+This is a FORK of the great AMX Netlinx extension by Eric Walters (https://marketplace.visualstudio.com/items?itemName=sentry07.amx-netlinx) that is a language package for programming AMX Netlinx control systems. It has syntax highlighting, a code beautifier, snippets for a lot of Netlinx
 functions and code blocks, build tasks to compile your code, and shortcuts for the AMX programming help file, Netlinx Diagnostics, and the File Transfer utility. After installing the extension, please open your VSCode Settings (CTRL-Comma) and search for Netlinx and verify/update the locations in there.
 
+## How to modify it to make some changes
+
+## How to use if offline
+I won't publish this extension on the market because Eric deserves all recognition, so if you want to install this package you would need to install it locally using .VSIX installation option on the extension section of Visual Studio Code. 
+
+## How to modify it for create your own flavor
+You would want to modify the snippts.json to create your own snippets. When you have finished, you would need to:
+- Make sure that you have installed Node.js (https://nodejs.org/en/)
+- Install VSCE tool running the following command on the terminal:
+```npm install -g vsce```
+- Package the extension using the following command on the extension folder:
+```vsce package```
+
 ## Use CTRL+SHIFT+B to compile your Netlinx code
+
+## New in this release (0.7:0) (FORK):
++ Switched to lowercase in almost every piece of code
++ Added get_buffer_string and get_buffer_char functions
++ Added PARSE code block with SNAPI functions for messages with this format: HEADER-Param,Value
 
 ## New in this release (0.6.0):
 + Added a document formatter provider. Use the context menu to select Format Document. You can also enable "Format on Save" in VSCode settings.
@@ -9,10 +27,6 @@ functions and code blocks, build tasks to compile your code, and shortcuts for t
 
 ## Known Issues
 * Single line code blocks without {} brackets will not be detected by the code beautifier and will not be indented properly
-
-## TODO
-* Fix known issues
-* Language server development
 
 ## Quality of life recommendations:
 * Install "Open In Application" extension by Fabio Spampinato: https://marketplace.visualstudio.com/items?itemName=fabiospampinato.vscode-open-in-application
