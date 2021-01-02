@@ -304,12 +304,12 @@
     "Right_String Function":{
         "prefix": "right_string",
         "body": "right_string(${1:var},${2:length})$0",
-        "description": "Right_String() function call"
+        "description": "right_string() function call"
     },
     "Mid_String Function":{
         "prefix": "mid_string",
         "body": "mid_string(${1:var},${2:startpos},${3:endpos})$0",
-        "description": "Mid_String() function call"
+        "description": "mid_string() function call"
     },
     "Integer Storage Type":{
         "prefix": "integer",
@@ -359,7 +359,7 @@
     "Local_Var SInteger Declaration":{
         "prefix": "local_var sinteger",
         "body": "local_var sinteger $0",
-        "description": "Local_Var Signed Integer variable declaration"
+        "description": "Local_Var signed integer variable declaration"
     },
     "Local_Var Char Declaration":{
         "prefix": "local_var char",
@@ -368,23 +368,23 @@
     },
     "Local_Var Long Declaration":{
         "prefix": "local_var long",
-        "body": "local_var LONG $0",
+        "body": "local_var long $0",
         "description": "Local_Var Long variable declaration"
     },
     "Local_Var SLong Declaration":{
         "prefix": "local_var slong",
-        "body": "local_var SLONG $0",
+        "body": "local_var slong $0",
         "description": "Local_Var SLong variable declaration"
     },
     "Local_Var Float Declaration":{
         "prefix": "local_var float",
-        "body": "local_var FLOAT $0",
-        "description": "Local_Var Float variable declaration"
+        "body": "local_var float $0",
+        "description": "local_var float variable declaration"
     },
     "Local_Var Double Declaration":{
         "prefix": "local_var double",
-    "body": "local_var DOUBLE $0",
-        "description": "Local_Var Double variable declaration"
+    "body": "local_var double $0",
+        "description": "Local_var double variable declaration"
     },
     "stack_var Declaration":{
         "prefix": "stack_var",
@@ -394,17 +394,17 @@
     "stack_var Char Declaration":{
         "prefix": "stack_var char",
         "body": "stack_var char $0",
-        "description": "stack_var Char context declaration"
+        "description": "stack_var char context declaration"
     },
     "stack_var Integer Declaration":{
         "prefix": "stack_var integer",
         "body": "stack_var integer $0",
-        "description": "stack_var Integer context declaration"
+        "description": "stack_var integer context declaration"
     },
     "stack_var SInteger Declaration":{
         "prefix": "stack_var sinteger",
         "body": "stack_var sinteger $0",
-        "description": "stack_var Signed Integer context declaration"
+        "description": "stack_var signed integer context declaration"
     },
     "stack_var Long Declaration":{
         "prefix": "stack_var long",
@@ -413,7 +413,7 @@
     },
     "stack_var SLong Declaration":{
         "prefix": "stack_var slong",
-        "body": "stack_var SLONG $0",
+        "body": "stack_var slong $0",
         "description": "stack_var slong context declaration"
     },
     "stack_var Float Declaration":{
@@ -426,6 +426,16 @@
         "body": "stack_var DOUBLE $0",
         "description": "stack_var double context declaration"
     },
+    "Volatile Integer Declaration":{
+        "prefix": "volatile integer",
+        "body": "volatile integer $0",
+        "description": "volatile integer context declaration"
+    },
+    "Volatile Char Declaration":{
+        "prefix": "volatile char",
+        "body": "volatile char $0",
+        "description": "volatile char context declaration"
+    },    
     "Send_Command Function":{
         "prefix": "send_command",
         "body": "send_command ${1:device},${2:command}",
@@ -471,22 +481,22 @@
 			"lower_string(${1:var})",
 			"$0"
 		],
-        "description": "Lower_String() function call"
+        "description": "lower_string() function call"
     },
     "Do_Push Function":{
         "prefix": "do_push",
         "body": "do_push(${1:dev},${2:channel})\n$0",
-        "description": "Do_Push function declaration"
+        "description": "do_push function declaration"
     },
     "Do_Push_Timed Function":{
         "prefix": "do_push_timed",
         "body": "do_push_timed(${1:dev},${2:channel})\n$0",
-        "description": "Do_Push_Timed function declaration"
+        "description": "do_push_timed function declaration"
     },
     "Do_Release Function":{
         "prefix": "do_release",
         "body": "do_release(${1:dev},${2:channel})\n$0",
-        "description": "Do_Release function declaration"
+        "description": "do_release function declaration"
     },
     "To Function":{
         "prefix": "to",
